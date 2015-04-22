@@ -7,5 +7,7 @@ import java.util.ArrayList;
  */
 public class Calendar
 {
+    //@Id
+    //@Entity
     ArrayList<Task> events = new ArrayList<Task>();
 }

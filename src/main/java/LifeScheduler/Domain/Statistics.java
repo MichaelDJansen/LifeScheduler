@@ -7,6 +7,9 @@ import java.sql.Time;
  */
 public class Statistics
 {
+    //@Id
+    //@Entity
+    private String statId;
     private Time timeSpentTogether;
     private int nrInteractions;
 }

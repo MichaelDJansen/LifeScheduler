@@ -5,6 +5,7 @@ package LifeScheduler.Domain;
  */
 public class ContactInformation
 {
+    //@Embeddable
     private String contactNumber;
     private String twitter;
     private String facebook;

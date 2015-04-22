@@ -8,6 +8,9 @@ import java.util.Date;
  */
 public class Task
 {
+    //@Id
+    //@Auto
+    private String id;
     private String taskName;
     private Time startTime;
     private Time finishTime;

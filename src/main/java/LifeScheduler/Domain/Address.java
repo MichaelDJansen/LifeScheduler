@@ -5,6 +5,7 @@ package LifeScheduler.Domain;
  */
 public class Address
 {
+    //@Embeddable
     String streetName;
     String houseNumber;
     String suburb;

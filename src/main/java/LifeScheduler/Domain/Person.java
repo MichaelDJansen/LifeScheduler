@@ -5,10 +5,16 @@ package LifeScheduler.Domain;
  */
 public abstract class Person
 {
+    //@Entity
+    //@Id
+    private String personId;
     private String name;
     private String surname;
+    //@Embeddable
     private Address address;
+    //@Embeddable
     private ContactInformation contactInformation;
+    //@Embeddable
     private Statistics personStats;
     private String levelOfImportance;
 

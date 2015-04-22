@@ -5,6 +5,7 @@ package LifeScheduler.Domain;
  */
 public class Friend extends Person {
 
+    //@Entity
     private String meetingPlace;
 
     @Override

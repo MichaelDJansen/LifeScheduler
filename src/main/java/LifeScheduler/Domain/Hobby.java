@@ -7,6 +7,7 @@ import java.sql.Time;
  */
 public class Hobby
 {
+    //@Embeddable
     private String name;
     private String nrDaysOccupied;
     private Time timeSpentPerActivity;

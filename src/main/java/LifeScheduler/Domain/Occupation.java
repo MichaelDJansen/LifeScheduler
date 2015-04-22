@@ -7,6 +7,7 @@ import java.sql.Time;
  */
 public class Occupation
 {
+    //@Embeddable
     private String name;
     private Time start;
     private Time finish;

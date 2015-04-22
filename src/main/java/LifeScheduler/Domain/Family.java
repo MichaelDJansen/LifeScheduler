@@ -5,6 +5,7 @@ package LifeScheduler.Domain;
  */
 public class Family extends Person {
 
+    //@Entity
     private String relation;
 
     public void contact(){}
