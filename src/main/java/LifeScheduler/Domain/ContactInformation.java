@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ContactInformation
 {
-    private String contactId;
+    private String personId;
     private String contactNumber;
     private String twitter;
     private String facebook;
@@ -17,7 +17,7 @@ public class ContactInformation
     private ContactInformation(){}
 
     public ContactInformation(Builder builder){
-        contactId = builder.contactId;
+        personId = builder.personId;
         contactNumber = builder.contactNumber;
         twitter = builder.twitter;
         facebook = builder.facebook;
@@ -25,13 +25,13 @@ public class ContactInformation
 
     public static class Builder{
 
-        private String contactId;
+        private String personId;
         private String contactNumber;
         private String twitter;
         private String facebook;
 
-        public Builder(String contactId,String contactNumber){
-            this.contactId = contactId;
+        public Builder(String personId,String contactNumber){
+            this.personId = personId;
             this.contactNumber = contactNumber;
         }
 
@@ -40,12 +40,12 @@ public class ContactInformation
             return this;
         }
 
-        public Builder Twitter(String twitter){
+        public Builder twitter(String twitter){
             this.twitter = twitter;
             return this;
         }
 
-        public Builder Facebook(String facebook){
+        public Builder facebook(String facebook){
             this.facebook = facebook;
             return this;
         }
@@ -54,7 +54,7 @@ public class ContactInformation
             this.facebook = value.getFacebook();
             this.contactNumber = value.getContactNumber();
             this.twitter = value.getTwitter();
-            this.contactId = value.getContactId();
+            this.personId = value.getPersonId();
             return this;
         }
 
@@ -62,8 +62,8 @@ public class ContactInformation
             return new ContactInformation(this);
         }
     }
-    public String getContactId() {
-        return contactId;
+    public String getPersonId() {
+        return personId;
     }
 
     public String getContactNumber() {

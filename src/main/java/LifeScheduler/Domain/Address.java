@@ -15,19 +15,23 @@ public class Address implements Serializable
     String suburb;
     String postalCode;
 
-    public Address(Builder builder){
+    public Address(Builder builder)
+    {
         streetName = builder.streetName;
         houseNumber = builder.houseNumber;
         suburb = builder.suburb;
         postalCode = builder.postalCode;
     }
+
+    private Address(){}
+
     public static class Builder{
         String streetName;
         String houseNumber;
         String suburb;
         String postalCode;
 
-        Builder (String streetName,String houseNumber,String suburb,String postalCode){
+        public Builder (String streetName,String houseNumber,String suburb,String postalCode){
             this.streetName = streetName;
             this.houseNumber = houseNumber;
             this.suburb = suburb;
@@ -39,6 +43,26 @@ public class Address implements Serializable
             this.houseNumber = value.getHouseNumber();
             this.suburb = value.getSuburb();
             this.postalCode = value.getPostalCode();
+            return this;
+        }
+
+        public Builder streetName(String streetName){
+            this.streetName = streetName;
+            return this;
+        }
+
+        public Builder houseNumber(String houseNumber){
+            this.houseNumber = houseNumber;
+            return this;
+        }
+
+        public Builder suburb(String suburb){
+            this.suburb = suburb;
+            return this;
+        }
+
+        public Builder postalCode(String postalCode){
+            this.postalCode = postalCode;
             return this;
         }
 

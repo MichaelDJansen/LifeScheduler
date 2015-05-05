@@ -58,16 +58,16 @@ public class CalendarTest extends TestCase
 
     @Test
     public void testCalendarCreation() throws Exception {
-        assertEquals("331",calendar1.getCalendarId());
+        assertEquals("331",calendar1.getPersonId());
 
-        assertEquals("1",calendar1.getEvents().get(0).getTaskId());
+        assertEquals("1",calendar1.getEvents().get(0).getPersonId());
         assertEquals("Take out trash",calendar1.getEvents().get(0).getTaskName());
         assertEquals("Take out the trash once you get home",calendar1.getEvents().get(0).getDescription());
         assertEquals(new Time(15,30,00),calendar1.getEvents().get(0).getStartTime());
         assertEquals(new Time(15,32,00),calendar1.getEvents().get(0).getFinishTime());
         assertEquals(new Date(2015,10,11),calendar1.getEvents().get(0).getDate());
 
-        assertEquals("2",calendar1.getEvents().get(1).getTaskId());
+        assertEquals("2",calendar1.getEvents().get(1).getPersonId());
         assertEquals("Clean room",calendar1.getEvents().get(1).getTaskName());
         assertEquals("Clean your room thoroughly which includes vacuuming under the bed",calendar1.getEvents().get(1).getDescription());
         assertEquals(new Time(16,00,00),calendar1.getEvents().get(1).getStartTime());
@@ -76,9 +76,9 @@ public class CalendarTest extends TestCase
     }
 
     public void testCalendarUpdate() throws Exception {
-        assertEquals("331",calendar1.getCalendarId());
+        assertEquals("331",calendar1.getPersonId());
 
-        assertEquals("1",calendar1.getEvents().get(0).getTaskId());
+        assertEquals("1",calendar1.getEvents().get(0).getPersonId());
         assertEquals("Take out trash",calendar1.getEvents().get(0).getTaskName());
         assertEquals("Take out the trash once you get home",calendar1.getEvents().get(0).getDescription());
         assertEquals(new Time(15,30,00),calendar1.getEvents().get(0).getStartTime());
@@ -101,9 +101,9 @@ public class CalendarTest extends TestCase
 
         calendar1 = new Calendar.Builder(calendarId,events1).copy(calendar1).events(events1).build();
 
-        assertEquals("331",calendar1.getCalendarId());
+        assertEquals("331",calendar1.getPersonId());
 
-        assertEquals("1",calendar1.getEvents().get(0).getTaskId());
+        assertEquals("1",calendar1.getEvents().get(0).getPersonId());
         assertEquals("Take out the trash",calendar1.getEvents().get(0).getTaskName());
         assertEquals("Take out the trash once you get home",calendar1.getEvents().get(0).getDescription());
         assertEquals(new Time(15,30,00),calendar1.getEvents().get(0).getStartTime());

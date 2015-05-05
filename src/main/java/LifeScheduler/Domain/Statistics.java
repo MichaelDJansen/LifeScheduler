@@ -17,29 +17,29 @@ public class Statistics implements Serializable
 
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
-    private String statId;
+    private String personId;
     private Time timeSpentTogether;
     private int nrInteractions;
 
     public Statistics(Builder builder){
-        statId = builder.statId;
+        personId = builder.personId;
         timeSpentTogether = builder.timeSpentTogether;
         nrInteractions = builder.nrInteractions;
     }
     public static class Builder{
 
-        private String statId;
+        private String personId;
         private Time timeSpentTogether;
         private int nrInteractions;
 
-        public Builder(String statId,Time timeSpentTogether,int nrInteractions){
-            this.statId = statId;
+        public Builder(String personId,Time timeSpentTogether,int nrInteractions){
+            this.personId = personId;
             this.timeSpentTogether = timeSpentTogether;
             this.nrInteractions = nrInteractions;
         }
 
-        public Builder statId(String statId){
-            this.statId = statId;
+        public Builder personId(String personId){
+            this.personId = personId;
             return this;
         }
 
@@ -54,7 +54,7 @@ public class Statistics implements Serializable
         }
 
         public Builder copy(Statistics value){
-            statId = value.statId;
+            personId = value.personId;
             timeSpentTogether = value.timeSpentTogether;
             nrInteractions = value.nrInteractions;
             return this;
@@ -64,8 +64,8 @@ public class Statistics implements Serializable
         }
     }
 
-    public String getStatId() {
-        return statId;
+    public String getPersonId() {
+        return personId;
     }
 
     public Time getTimeSpentTogether() {

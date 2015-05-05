@@ -30,7 +30,7 @@ public class StatisticsTest extends TestCase
     public void testStatisticsCreation() throws Exception {
         assertEquals(4,statistics1.getNrInteractions());
         assertEquals(new Time(5,10,00),statistics1.getTimeSpentTogether());
-        assertEquals("1",statistics1.getStatId());
+        assertEquals("1",statistics1.getPersonId());
     }
 
     public void testStatisticsUpdate() throws Exception {

@@ -10,7 +10,7 @@ import java.sql.Time;
 @Embeddable
 public class Hobby
 {
-    private String hobbyId;
+    private String personId;
     private String name;
     private int nrDaysOccupied;
     private Time timeSpentPerActivity;
@@ -18,7 +18,7 @@ public class Hobby
     private Hobby(){}
 
     public Hobby(Builder builder){
-        hobbyId = builder.hobbyId;
+        personId = builder.personId;
         name = builder.name;
         nrDaysOccupied = builder.nrDaysOccupied;
         timeSpentPerActivity = builder.timeSpentPerActivity;
@@ -26,13 +26,13 @@ public class Hobby
 
     public static class Builder{
 
-        private String hobbyId;
+        private String personId;
         private String name;
         private int nrDaysOccupied;
         private Time timeSpentPerActivity;
 
-        public Builder(String hobbyId,String name,int nrDaysOccupied,Time timeSpentPerActivity){
-            this.hobbyId = hobbyId;
+        public Builder(String personId,String name,int nrDaysOccupied,Time timeSpentPerActivity){
+            this.personId = personId;
             this.name = name;
             this.nrDaysOccupied = nrDaysOccupied;
             this.timeSpentPerActivity = timeSpentPerActivity;
@@ -54,7 +54,7 @@ public class Hobby
         }
 
         public Builder copy(Hobby value){
-            hobbyId = value.hobbyId;
+            personId = value.personId;
             name = value.name;
             nrDaysOccupied = value.nrDaysOccupied;
             timeSpentPerActivity = value.timeSpentPerActivity;
@@ -66,8 +66,8 @@ public class Hobby
         }
     }
 
-    public String getHobbyId(){
-        return hobbyId;
+    public String getPersonId(){
+        return personId;
     }
     public String getName() {
         return name;

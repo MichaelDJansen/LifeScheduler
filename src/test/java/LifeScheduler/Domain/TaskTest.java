@@ -34,7 +34,7 @@ public class TaskTest extends TestCase
     @Test
     public void testTaskCreation() throws Exception
     {
-        assertEquals("1", task1.getTaskId());
+        assertEquals("1", task1.getPersonId());
         assertEquals("Take out trash",task1.getTaskName());
         assertEquals("Take out the trash once you get home",task1.getDescription());
         assertEquals(new Time(15,30,00),task1.getStartTime());

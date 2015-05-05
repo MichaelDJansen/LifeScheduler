@@ -2,12 +2,84 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes />
+  <nodes>
+    <node x="0.0" y="0.0">LifeScheduler.Domain.Address</node>
+    <node x="337.5" y="79.0">LifeScheduler.Domain.Calendar</node>
+    <node x="436.5" y="79.0">LifeScheduler.Domain.Hobby</node>
+    <node x="94.0" y="0.0">LifeScheduler.Domain.ContactInformation</node>
+    <node x="251.0" y="0.0">LifeScheduler.Domain.Statistics</node>
+    <node x="161.66666666666669" y="168.0">LifeScheduler.Domain.Friend</node>
+    <node x="416.030303030303" y="200.5">LifeScheduler.Domain.User</node>
+    <node x="128.5" y="237.75">LifeScheduler.Domain.Person</node>
+    <node x="349.0" y="-10.0">LifeScheduler.Domain.Task</node>
+    <node x="74.66666666666669" y="168.0">LifeScheduler.Domain.Family</node>
+    <node x="524.5" y="79.0">LifeScheduler.Domain.Occupation</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
-  <SelectedNodes />
+  <edges>
+    <edge source="LifeScheduler.Domain.User" target="LifeScheduler.Domain.Calendar">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Calendar" target="LifeScheduler.Domain.Task">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Family" target="LifeScheduler.Domain.Statistics">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Friend" target="LifeScheduler.Domain.ContactInformation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Family" target="LifeScheduler.Domain.Person">
+      <point x="0.0" y="-14.5" />
+      <point x="108.16666666666669" y="148.0" />
+      <point x="139.83333333333337" y="148.0" />
+      <point x="-22.66666666666663" y="14.5" />
+    </edge>
+    <edge source="LifeScheduler.Domain.User" target="LifeScheduler.Domain.Person">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Family" target="LifeScheduler.Domain.ContactInformation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.User" target="LifeScheduler.Domain.Hobby">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Family" target="LifeScheduler.Domain.Address">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Friend" target="LifeScheduler.Domain.Address">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.User" target="LifeScheduler.Domain.Occupation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Friend" target="LifeScheduler.Domain.Person">
+      <point x="0.0" y="-14.5" />
+      <point x="194.16666666666669" y="148.0" />
+      <point x="162.5" y="148.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="LifeScheduler.Domain.Friend" target="LifeScheduler.Domain.Statistics">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="313.0" y="99.0" />
+  <SelectedNodes>
+    <node>LifeScheduler.Domain.Person</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
 </Diagram>
 

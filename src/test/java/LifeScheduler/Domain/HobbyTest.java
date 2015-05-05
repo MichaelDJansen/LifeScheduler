@@ -32,7 +32,7 @@ public class HobbyTest extends TestCase
 
     @Test
     public void testHobbyCreation() throws Exception {
-        assertEquals("155", hobby1.getHobbyId());
+        assertEquals("155", hobby1.getPersonId());
         assertEquals("Dragonboating", hobby1.getName());
         assertEquals(3, hobby1.getNrDaysOccupied());
         assertEquals(new Time(1,30,00), hobby1.getTimeSpentPerActivity());

@@ -17,7 +17,7 @@ public class Task implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String taskId;
+    private String personId;
     private String taskName;
     private Time startTime;
     private Time finishTime;
@@ -26,7 +26,7 @@ public class Task implements Serializable
 
     Task(Builder builder)
     {
-        taskId = builder.taskId;
+        personId = builder.personId;
         taskName = builder.taskName;
         startTime = builder.startTime;
         finishTime = builder.finishTime;
@@ -36,15 +36,15 @@ public class Task implements Serializable
 
     public static class Builder{
 
-        private String taskId;
+        private String personId;
         private String taskName;
         private Time startTime;
         private Time finishTime;
         private Date date;
         private String description;
 
-        public Builder(String taskId,String taskName,Time startTime,Time finishTime,Date date) {
-            this.taskId = taskId;
+        public Builder(String personId,String taskName,Time startTime,Time finishTime,Date date) {
+            this.personId = personId;
             this.taskName = taskName;
             this.startTime = startTime;
             this.finishTime = finishTime;
@@ -57,7 +57,7 @@ public class Task implements Serializable
         }
 
         public Builder copy(Task value){
-            this.taskId = value.taskId;
+            this.personId = value.personId;
             this.taskName = value.getTaskName();
             this.startTime = value.getStartTime();
             this.finishTime = value.getFinishTime();
@@ -71,8 +71,8 @@ public class Task implements Serializable
         }
     }
 
-    public String getTaskId() {
-        return taskId;
+    public String getPersonId() {
+        return personId;
     }
 
     public String getTaskName() {
@@ -102,20 +102,20 @@ public class Task implements Serializable
 
         Task task = (Task) o;
 
-        if (!taskId.equals(task.taskId)) return false;
+        if (!personId.equals(task.personId)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return taskId.hashCode();
+        return personId.hashCode();
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "taskId='" + taskId + '\'' +
+                "taskId='" + personId + '\'' +
                 ", taskName='" + taskName + '\'' +
                 ", startTime=" + startTime +
                 ", finishTime=" + finishTime +

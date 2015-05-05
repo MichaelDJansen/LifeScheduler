@@ -16,7 +16,7 @@ public class Calendar implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    String calendarId;
+    String personId;
 
     ArrayList<Task> events = new ArrayList<Task>();
 
@@ -24,16 +24,16 @@ public class Calendar implements Serializable
     }
 
     public Calendar(Builder builder){
-        calendarId = builder.calendarId;
+        personId = builder.personId;
         events = builder.events;
     }
 
     public static class Builder{
-        String calendarId;
+        String personId;
         ArrayList<Task> events = new ArrayList<Task>();
 
         public Builder(String calendarId,ArrayList<Task> events){
-            this.calendarId = calendarId;
+            this.personId = calendarId;
             this.events = events;
         }
 
@@ -42,7 +42,7 @@ public class Calendar implements Serializable
             return this;
         }
         public Builder copy(Calendar value){
-            calendarId = value.calendarId;
+            personId = value.personId;
             events = value.events;
             return this;
         }
@@ -52,8 +52,8 @@ public class Calendar implements Serializable
         }
     }
 
-    public String getCalendarId() {
-        return calendarId;
+    public String getPersonId() {
+        return personId;
     }
 
     public ArrayList<Task> getEvents() {
