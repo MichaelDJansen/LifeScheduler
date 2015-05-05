@@ -1,9 +1,6 @@
 package LifeScheduler.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
@@ -12,12 +9,10 @@ import java.util.Date;
  * Created by Michael on 17/04/2015.
  */
 
-@Entity
+@Embeddable
 public class Task implements Serializable
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String personId;
+    private String calendarId;
     private String taskName;
     private Time startTime;
     private Time finishTime;
@@ -26,7 +21,7 @@ public class Task implements Serializable
 
     Task(Builder builder)
     {
-        personId = builder.personId;
+        calendarId = builder.calendarId;
         taskName = builder.taskName;
         startTime = builder.startTime;
         finishTime = builder.finishTime;
@@ -36,15 +31,15 @@ public class Task implements Serializable
 
     public static class Builder{
 
-        private String personId;
+        private String calendarId;
         private String taskName;
         private Time startTime;
         private Time finishTime;
         private Date date;
         private String description;
 
-        public Builder(String personId,String taskName,Time startTime,Time finishTime,Date date) {
-            this.personId = personId;
+        public Builder(String calendarId,String taskName,Time startTime,Time finishTime,Date date) {
+            this.calendarId = calendarId;
             this.taskName = taskName;
             this.startTime = startTime;
             this.finishTime = finishTime;
@@ -57,7 +52,7 @@ public class Task implements Serializable
         }
 
         public Builder copy(Task value){
-            this.personId = value.personId;
+            this.calendarId = value.calendarId;
             this.taskName = value.getTaskName();
             this.startTime = value.getStartTime();
             this.finishTime = value.getFinishTime();
@@ -71,8 +66,8 @@ public class Task implements Serializable
         }
     }
 
-    public String getPersonId() {
-        return personId;
+    public String getCalendarId() {
+        return calendarId;
     }
 
     public String getTaskName() {
@@ -102,20 +97,20 @@ public class Task implements Serializable
 
         Task task = (Task) o;
 
-        if (!personId.equals(task.personId)) return false;
+        if (!calendarId.equals(task.calendarId)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return personId.hashCode();
+        return calendarId.hashCode();
     }
 
     @Override
     public String toString() {
         return "Task{" +
-                "taskId='" + personId + '\'' +
+                "taskId='" + calendarId + '\'' +
                 ", taskName='" + taskName + '\'' +
                 ", startTime=" + startTime +
                 ", finishTime=" + finishTime +

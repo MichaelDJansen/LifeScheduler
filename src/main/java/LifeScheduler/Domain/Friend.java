@@ -25,7 +25,15 @@ public class Friend implements Person {
 
     private Friend(){}
 
-    Friend(Builder builder){
+    Friend(Builder builder)
+    {
+        name = builder.name;
+        surname = builder.surname;
+        address = builder.address;
+        contactInformation = builder.contactInformation;
+        personStats = builder.personStats;
+        levelOfImportance = builder.levelOfImportance;
+        meetingPlace = builder.meetingPlace;
     }
 
     public static class Builder{

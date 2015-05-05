@@ -1,9 +1,6 @@
 package LifeScheduler.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -16,11 +13,16 @@ public class Calendar implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    String personId;
+    String calendarId;
 
+    @Column(unique = true)
+    String personId;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="person_id")
     ArrayList<Task> events = new ArrayList<Task>();
 
-    private Calendar (){
+    private Calendar()
+    {
     }
 
     public Calendar(Builder builder){
@@ -29,11 +31,12 @@ public class Calendar implements Serializable
     }
 
     public static class Builder{
+        String calendarId;
         String personId;
         ArrayList<Task> events = new ArrayList<Task>();
 
-        public Builder(String calendarId,ArrayList<Task> events){
-            this.personId = calendarId;
+        public Builder(String personId,ArrayList<Task> events){
+            this.personId = personId;
             this.events = events;
         }
 
@@ -41,8 +44,23 @@ public class Calendar implements Serializable
             this.events = events;
             return this;
         }
+
+        public Builder personId(String personId)
+        {
+            this.personId = personId;
+            return this;
+        }
+
+        public Builder calendarId(String calendarId)
+        {
+            this.calendarId = calendarId;
+            return this;
+        }
+
+
         public Builder copy(Calendar value){
             personId = value.personId;
+            calendarId = value.calendarId;
             events = value.events;
             return this;
         }
@@ -55,6 +73,8 @@ public class Calendar implements Serializable
     public String getPersonId() {
         return personId;
     }
+
+    public String getCalendarId(){  return calendarId;    }
 
     public ArrayList<Task> getEvents() {
         return events;

@@ -1,6 +1,7 @@
 package LifeScheduler.Domain;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 import java.sql.Time;
 
 /**
@@ -8,7 +9,7 @@ import java.sql.Time;
  */
 
 @Embeddable
-public class Hobby
+public class Hobby implements Serializable
 {
     private String personId;
     private String name;

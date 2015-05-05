@@ -1,15 +1,15 @@
 package LifeScheduler.Domain;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 /**
  * Created by Michael on 17/04/2015.
  */
 
 @Embeddable
-public class ContactInformation
+public class ContactInformation implements Serializable
 {
-    private String personId;
     private String contactNumber;
     private String twitter;
     private String facebook;
@@ -17,7 +17,6 @@ public class ContactInformation
     private ContactInformation(){}
 
     public ContactInformation(Builder builder){
-        personId = builder.personId;
         contactNumber = builder.contactNumber;
         twitter = builder.twitter;
         facebook = builder.facebook;
@@ -25,13 +24,12 @@ public class ContactInformation
 
     public static class Builder{
 
-        private String personId;
+
         private String contactNumber;
         private String twitter;
         private String facebook;
 
-        public Builder(String personId,String contactNumber){
-            this.personId = personId;
+        public Builder(String contactNumber){
             this.contactNumber = contactNumber;
         }
 
@@ -54,7 +52,7 @@ public class ContactInformation
             this.facebook = value.getFacebook();
             this.contactNumber = value.getContactNumber();
             this.twitter = value.getTwitter();
-            this.personId = value.getPersonId();
+
             return this;
         }
 
@@ -62,10 +60,6 @@ public class ContactInformation
             return new ContactInformation(this);
         }
     }
-    public String getPersonId() {
-        return personId;
-    }
-
     public String getContactNumber() {
         return contactNumber;
     }

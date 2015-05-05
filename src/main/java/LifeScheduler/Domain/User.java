@@ -2,10 +2,7 @@ package LifeScheduler.Domain;
 
 import com.sun.org.apache.bcel.internal.generic.FADD;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,16 +11,20 @@ import java.util.ArrayList;
  */
 
 @Entity
-public class User implements Serializable{
+public class User implements Serializable
+{
 
     @Id
     private String userId;
     private Calendar calendar;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")
     private ArrayList<Hobby> hobbies;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")
     private ArrayList<Person> familyAndFriends;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")
     private ArrayList<Person> favourites;
     private Occupation occupation;
 

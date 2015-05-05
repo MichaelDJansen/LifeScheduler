@@ -25,7 +25,15 @@ public class Family implements Person
 
     private Family(){}
 
-    Family(Builder builder){
+    Family(Builder builder)
+    {
+        name = builder.name;
+        surname = builder.surname;
+        address = builder.address;
+        contactInformation = builder.contactInformation;
+        personStats = builder.personStats;
+        levelOfImportance = builder.levelOfImportance;
+        relation = builder.relation;
     }
 
     public static class Builder{

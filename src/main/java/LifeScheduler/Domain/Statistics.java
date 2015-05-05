@@ -1,9 +1,6 @@
 package LifeScheduler.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
 
@@ -11,12 +8,12 @@ import java.sql.Time;
  * Created by Michael on 17/04/2015.
  */
 
-@Entity
+@Embeddable
 public class Statistics implements Serializable
 {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String personId;
     private Time timeSpentTogether;
     private int nrInteractions;
