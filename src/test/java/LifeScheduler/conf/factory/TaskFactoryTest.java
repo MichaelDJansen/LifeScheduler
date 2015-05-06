@@ -1,5 +1,6 @@
-package LifeScheduler.Domain;
+package LifeScheduler.conf.factory;
 
+import LifeScheduler.Domain.Task;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -9,11 +10,10 @@ import java.sql.Date;
 import java.sql.Time;
 
 /**
- * Created by Michael on 24/04/2015.
+ * Created by Michael on 06/05/2015.
  */
-public class TaskTest extends TestCase
+public class TaskFactoryTest extends TestCase
 {
-
     Task task1;
     String taskId,taskName,description;
     Time startTime,finishTime;
@@ -28,7 +28,7 @@ public class TaskTest extends TestCase
         finishTime = new Time(15,32,00);
         date = new Date(2015,10,11);
 
-        task1 = new Task.Builder(taskId,taskName,startTime,finishTime,date).description(description).build();
+        task1 = TaskFactory.createTask(taskId,taskName,startTime,finishTime,date);
     }
 
     @Test

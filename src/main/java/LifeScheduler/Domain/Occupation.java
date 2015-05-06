@@ -36,6 +36,26 @@ public class Occupation implements Serializable
             this.nrDaysOccupied = nrDaysOccupied;
         }
 
+        public Builder name(String name){
+            this.name = name;
+            return this;
+        }
+
+        public Builder start(Time start){
+            this.start = start;
+            return this;
+        }
+
+        public Builder finish(Time finish){
+            this.finish = finish;
+            return this;
+        }
+
+        public Builder nrDaysOccupied(int nrDaysOccupied){
+            this.nrDaysOccupied = nrDaysOccupied;
+            return this;
+        }
+
         public Builder copy(Occupation value){
             name = value.getName();
             start = value.getStart();
@@ -45,7 +65,6 @@ public class Occupation implements Serializable
         }
 
         public Occupation build(){
-
             return new Occupation(this);
         }
     }

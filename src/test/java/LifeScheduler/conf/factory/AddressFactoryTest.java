@@ -1,15 +1,15 @@
-package LifeScheduler.Domain;
+package LifeScheduler.conf.factory;
 
-import LifeScheduler.conf.factory.AddressFactory;
+import LifeScheduler.Domain.Address;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by Michael on 25/04/2015.
+ * Created by Michael on 06/05/2015.
  */
-public class AddressTest extends TestCase
+public class AddressFactoryTest extends TestCase
 {
     Address address1;
 
@@ -26,7 +26,7 @@ public class AddressTest extends TestCase
         suburb = "Purdale";
         postalCode = "7400";
 
-        address1 = AddressFactory.createAddress(streetName,houseNumber,suburb,postalCode);
+        address1 = new Address.Builder(streetName,houseNumber,suburb,postalCode).build();
     }
 
     @Test

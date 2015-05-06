@@ -7,10 +7,10 @@ import LifeScheduler.Domain.ContactInformation;
  */
 public class ContactInformationFactory
 {
-    public static ContactInformation createContactInformation(String contactId,String contactNumber,String facebook,String twitter)
+    public static ContactInformation createContactInformation(String contactNumber,String facebook,String twitter)
     {
         ContactInformation contactInformation = new ContactInformation
-                .Builder(contactId,contactNumber)
+                .Builder(contactNumber)
                 .facebook(facebook)
                 .twitter(twitter)
                 .build();

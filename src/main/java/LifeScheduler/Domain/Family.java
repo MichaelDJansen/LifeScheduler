@@ -4,13 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by Michael on 17/04/2015.
  */
 
 @Entity
-public class Family implements Person
+public class Family implements Person,Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

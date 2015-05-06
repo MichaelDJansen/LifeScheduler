@@ -1,29 +1,29 @@
-package LifeScheduler.Domain;
+package LifeScheduler.conf.factory;
 
+import LifeScheduler.Domain.ContactInformation;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 
 /**
- * Created by Michael on 24/04/2015.
+ * Created by Michael on 06/05/2015.
  */
-public class ContactInformationTest extends TestCase
+public class ContactInformationFactoryTest extends TestCase
 {
     ContactInformation contactInformation1;
 
-    String contactId;
+
     String contactNumber;
     String twitter;
     String facebook;
 
     @Before
     public void setUp() throws Exception {
-        contactId = "1";
         contactNumber = "0735586997";
         twitter = "@RoboTechnique";
         facebook = "Robert Technicue";
 
-        contactInformation1 = new ContactInformation.Builder(contactNumber).twitter(twitter).facebook(facebook).build();
+        contactInformation1 = ContactInformationFactory.createContactInformation(contactNumber,facebook,twitter);
     }
 
     public void testContactinformationCreation() throws Exception {

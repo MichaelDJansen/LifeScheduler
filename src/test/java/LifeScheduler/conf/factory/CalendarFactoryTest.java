@@ -1,5 +1,7 @@
-package LifeScheduler.Domain;
+package LifeScheduler.conf.factory;
 
+import LifeScheduler.Domain.Calendar;
+import LifeScheduler.Domain.Task;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
@@ -10,9 +12,9 @@ import java.sql.Time;
 import java.util.ArrayList;
 
 /**
- * Created by Michael on 24/04/2015.
+ * Created by Michael on 06/05/2015.
  */
-public class CalendarTest extends TestCase
+public class CalendarFactoryTest extends TestCase
 {
     Calendar calendar1;
     Task task1,task2;
@@ -36,7 +38,8 @@ public class CalendarTest extends TestCase
         finishTime1 = new Time(15,32,00);
         date1 = new Date(2015,10,11);
 
-        task1 = new Task.Builder(taskId1,taskName1,startTime1,finishTime1,date1).description(description1).build();
+        task1 = TaskFactory.createTask(taskId1, taskName1, startTime1, finishTime1, date1);
+        task1 = new Task.Builder(taskId1, taskName1, startTime1, finishTime1, date1).copy(task1).description(description1).build();
 
         taskId2 = "2";
         taskName2 = "Clean room";
@@ -45,6 +48,7 @@ public class CalendarTest extends TestCase
         finishTime2 = new Time(16,20,00);
         date2 = new Date(2015,10,11);
 
+        task2 = TaskFactory.createTask(taskId2,taskName2,startTime2,finishTime2,date2);
         task2 = new Task.Builder(taskId2,taskName2,startTime2,finishTime2,date2).description(description2).build();
 
 
